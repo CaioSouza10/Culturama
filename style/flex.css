@@ -1,0 +1,119 @@
+.menu {
+    /*Celular*/
+    /*Cabeçalho*/
+    /* Torna o elemento em um flex container, fazendo seus elementos interiores se tornarem flex items*/
+    display: flex;
+    /*Quando aumentar a largura do layout, ela vai aplicar espaçamento de tamanhos iguais*/
+    justify-content: space-evenly;
+    /*Alinha itens no centro*/
+    align-items: center;
+    /*Quando não tiver mais espaço ao diminuir o layout, os elementos irão um para baixo do outro*/
+    flex-wrap: wrap;
+    /*Ajudou a alinhar em colunas*/
+    column-gap: 33px;
+}
+
+.categorias__lista {
+    display: flex;
+    flex-direction: column;
+    row-gap: .5rem;
+}
+
+.destaques {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+}
+
+.destaques__barra {
+    flex-grow: 1;
+}
+
+.eventos__lista {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 1.5rem;
+    row-gap: 1rem;
+    justify-content: center;
+}
+
+.eventos__item {
+    flex-grow: 1;
+    max-width: 400px;
+}
+
+.agenda__lista {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 1.5rem;
+    row-gap: 1rem;
+    justify-content: center;
+}
+
+/*Para preencher todo o container com todos elementos juntos*/
+.agenda__item {
+    flex-grow: 1;
+}
+
+.rodape {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+.rodape__logo {
+    align-self: end;
+}    
+
+
+    /*Tablet*/
+/*Pra poder aplicar os estilos para telas que tiverem pelo menos 720px de largura*/
+@media (min-width: 720px) {
+
+    .menu {
+        column-gap: 75px;
+    }
+
+    .categorias__lista {
+        flex-wrap: wrap;
+        column-gap: 1.5rem;
+        row-gap: 1;
+    }
+
+    .eventos__lista {
+        justify-content: end;
+    }
+
+    .agenda__lista {
+        justify-content: end;
+    }
+
+}
+
+/*Computador*/
+@media (min-width: 1440px) {
+    .menu {
+        column-gap: 105px;
+        /*Pra informar que não quer a quebra de linha, mantendo eles alinhados*/
+        flex-wrap: nowrap;
+    }
+
+    /*Ajustando a ordem dos itens sem ser pelo HTML, pra não atrapalhar no espaçamento*/
+    .menu__item:nth-child(1) {
+        order: 1;
+    }
+    .menu__item:nth-child(2) {
+        order: 3;
+    }
+    .menu__item:nth-child(3) {
+        order: 4;
+    }
+    .menu__item:nth-child(4) {
+        order: 5;
+    }
+    .menu__item:nth-child(5) {
+        order: 2;
+    }
+
+   
+}
